@@ -10,11 +10,12 @@ const form = (props) => {
       ...props.todos,
       {text : props.inputText, completed:false , id:Math.random() *100 }
     ])
+    props.setInputText("")
   }  
   return(
             <form>
                 <br />
-      <input onChange={formip} type="text" className="todo-input" />
+      <input value={props.inputText} onChange={formip} type="text" className="todo-input" />
       <button className="todo-button" type="submit" onClick={submitTodoHandler}>
         <i className="fas fa-plus-square"></i>
       </button>
@@ -26,7 +27,7 @@ const form = (props) => {
         </select>
         
       </div>
-    </form>
+    </form> 
             
         
     );
