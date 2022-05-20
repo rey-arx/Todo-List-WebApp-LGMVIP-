@@ -6,10 +6,15 @@ const Todo = (props) => {
    
     props.setTodos(props.todos.filter((el) =>el.id !== props.id ))
   }
+  const completeHandler = () =>{
+    alert( "Task : " + props.text +  " " +  "has been completed")
+    props.setTodos(props.todos.filter((el) =>el.id !== props.id ))
+  }
+  
   return (
     <div className="todo">
       <li   className="todo-item">{props.text}</li>
-      <button className="complete-btn">
+      <button onClick={completeHandler} className="complete-btn">
         <i className="fas fa-check"></i>
       </button>
       <button onClick={deleteHandler} className="trash-btn">
