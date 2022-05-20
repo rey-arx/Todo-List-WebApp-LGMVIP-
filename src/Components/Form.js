@@ -8,7 +8,7 @@ const form = (props) => {
     e.preventDefault();
     props.setTodos([
       ...props.todos,
-      {text : props.inputText, completed:false , id:Math.random() *100 }
+      {text : props.inputText, id:Math.random()}
     ])
     props.setInputText("")
   }  
